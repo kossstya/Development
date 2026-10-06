@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Аналіз економічної безпеки Республіки Кіпр у 2020–2025 роках: показники, порогові значення, графіки, загрози.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="author" content="Канавець Костянтин Олегович">
+  <title>Аналіз економічної безпеки — Республіка Кіпр</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Економічна безпека країни — головна">
+        <span class="brand-logo">CY</span>
+        <span>Економічна безпека<small>Республіка Кіпр · 2020–2025</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Про автора</a></li>
+        <li><a href="analysis.html" class="active" aria-current="page">Аналіз економічної безпеки</a></li>
+        <li><a href="../index.html" class="nav-back">← Усі проєкти</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Республіка Кіпр · 2020–2025</span>
+        <h1>Аналіз економічної безпеки Кіпру</h1>
+        <p class="lead">Оцінювання 10 індикаторів економічної безпеки за даними Eurostat, Центрального
+          банку Кіпру та CYSTAT із порівнянням з пороговими значеннями: Маастрихтські критерії,
+          MIP Scoreboard ЄС, поріг EBA та методика Мінекономіки України.</p>
+        <nav class="toc" aria-label="Зміст сторінки">
+          <a href="#kpi">Ключові показники</a>
+          <a href="#table">Таблиця</a>
+          <a href="#dynamics">Динаміка</a>
+          <a href="#integral">Інтегральна оцінка</a>
+          <a href="#debt-budget">Борг і бюджет</a>
+          <a href="#trends">Тенденції</a>
+          <a href="#threats">Загрози</a>
+          <a href="#conclusion">Висновок</a>
+          <a href="#sources-section">Джерела</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 1. Ключові показники -->
+    <section class="section" id="kpi">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">1 · Огляд</span>
+          <h2>Ключові показники за останній рік</h2>
+          <p>Значення за 2025 р. (для енергозалежності — за 2024 р.). Зелена позначка — показник
+            у безпечній зоні, червона — порогове значення порушено.</p>
+        </div>
+        <div class="summary-strip" id="summary"></div>
+        <div class="kpi-grid" id="kpi-grid"></div>
+      </div>
+    </section>
+
+    <!-- 2. Таблиця -->
+    <section class="section section-alt" id="table">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">2 · Вихідні дані</span>
+          <h2>Індикатори економічної безпеки за 2020–2025 рр.</h2>
+          <p>Кожну клітинку позначено відповідно до порогового значення. На малих екранах таблицю
+            можна прокручувати горизонтально.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="indicators-table">
+            <caption class="text-muted" style="caption-side:bottom;padding:10px;text-align:left">Джерела: Eurostat; NPL — Central Bank of Cyprus; CYSTAT.</caption>
+          </table>
+        </div>
+        <div class="legend">
+          <span><i class="l-safe"></i>Безпечна зона</span>
+          <span><i class="l-danger"></i>Поріг порушено</span>
+          <span><i class="l-na"></i>н/д — дані не опубліковані (не враховуються)</span>
+          <span><i class="l-thr"></i>Порогове значення</span>
+        </div>
+        <p class="text-muted mt-24">Примітка: дані про енергозалежність за 2025 р. ще не опубліковані.
+          Середній рівень енергозалежності ЄС у 2024 р. — 57,3 %.</p>
+      </div>
+    </section>
+
+    <!-- 3. Динаміка -->
+    <section class="section" id="dynamics">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">3 · Інтерактивний графік</span>
+          <h2>Динаміка показників і порогові значення</h2>
+          <p>Оберіть показник, щоб побачити його динаміку. Пунктирна лінія — порогове значення;
+            колір точки показує, чи був показник у безпечній зоні.</p>
+        </div>
+        <div class="card chart-card">
+          <div class="chart-switch" id="dynamics-switch" role="group" aria-label="Вибір показника"></div>
+          <select class="chart-select" id="dynamics-select" aria-label="Вибір показника"></select>
+          <div class="chart-box"><canvas id="dynamicsChart" aria-label="Графік динаміки обраного показника" role="img"></canvas></div>
+          <div class="chart-note" id="dynamics-note"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4–5. Інтегральна оцінка + Борг і бюджет -->
+    <section class="section section-alt">
+      <div class="container grid grid-2">
+        <article class="card chart-card" id="integral">
+          <div class="chart-head">
+            <div>
+              <span class="section-kicker">4 · Інтегральна оцінка</span>
+              <h3>Частка показників у безпечній зоні</h3>
+              <p>Відсоток індикаторів, що відповідають пороговим значенням (н/д не враховуються).</p>
+            </div>
+          </div>
+          <div class="chart-box sm"><canvas id="integralChart" aria-label="Графік інтегральної оцінки" role="img"></canvas></div>
+          <div class="legend">
+            <span><i style="background:#d23f3f"></i>&lt; 40 % — низький рівень</span>
+            <span><i style="background:#e0a020"></i>40–60 % — задовільний</span>
+            <span><i style="background:#16955a"></i>≥ 60 % — достатній</span>
+          </div>
+        </article>
+
+        <article class="card chart-card" id="debt-budget">
+          <div class="chart-head">
+            <div>
+              <span class="section-kicker">5 · Державні фінанси</span>
+              <h3>Державний борг і сальдо бюджету</h3>
+              <p>Стовпці — борг (ліва вісь), лінія — сальдо бюджету (права вісь); пунктир — пороги.</p>
+            </div>
+          </div>
+          <div class="chart-box sm"><canvas id="debtBudgetChart" aria-label="Комбінований графік державного боргу та сальдо бюджету" role="img"></canvas></div>
+          <div class="chart-note"><strong>Висновок:</strong> завдяки бюджетному профіциту з 2022 р. борг скоротився
+            з 113,6 % до 55,0 % ВВП і у 2025 р. вперше опустився нижче Маастрихтського порогу 60 %.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Тенденції -->
+    <section class="section" id="trends">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">6 · Тенденції</span>
+          <h2>Безпечні та небезпечні тенденції</h2>
+          <p>Порівняння значень 2025 р. з 2020 р. з урахуванням порогу: зміна у процентних пунктах
+            та положення показника відносно безпечної зони.</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card trend-col safe">
+            <h3><span class="badge badge-safe">Безпечні</span>Показник у безпечній зоні</h3>
+            <ul class="trend-list" id="trends-safe"></ul>
+          </div>
+          <div class="card trend-col danger">
+            <h3><span class="badge badge-danger">Небезпечні</span>Поріг порушено</h3>
+            <ul class="trend-list" id="trends-danger"></ul>
+          </div>
+        </div>
+        <p class="text-muted mt-24" id="trends-foot"></p>
+      </div>
+    </section>
+
+    <!-- 7. Загрози -->
+    <section class="section section-alt" id="threats">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">7 · Загрози</span>
+          <h2>Основні загрози економічній безпеці Кіпру</h2>
+          <p>Рівень загрози визначено з урахуванням відхилення від порогу, динаміки показника
+            та структурних особливостей економіки острова.</p>
+        </div>
+        <div class="threat-grid" id="threat-grid"></div>
+      </div>
+    </section>
+
+    <!-- 8. Висновок -->
+    <section class="section" id="conclusion">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">8 · Висновок</span>
+          <h2>Узагальнений аналітичний висновок</h2>
+        </div>
+        <article class="card conclusion reveal">
+          <p>За 2020–2025 рр. рівень економічної безпеки Республіки Кіпр суттєво підвищився:
+            інтегральна оцінка (частка показників у безпечній зоні) зросла з <strong>10 %</strong>
+            у 2020 р. до <strong>66,7 %</strong> у 2025 р. (6 із 9 показників, для яких є дані).
+            Економіка швидко відновилася після пандемічного спаду, а державні фінанси та банківський
+            сектор пройшли глибоку стабілізацію.</p>
+          <p><strong class="safe-text">Сильні сторони:</strong></p>
+          <ul>
+            <li>стійке економічне зростання (3,8 % у 2025 р. при порозі 2 %);</li>
+            <li>інфляція повернулася до цільового рівня (0,8 % після піку 8,1 % у 2022 р.);</li>
+            <li>безробіття знизилося з 7,6 % до 4,4 %;</li>
+            <li>державний борг скоротився більш ніж удвічі — до 55,0 % ВВП (нижче порогу 60 %), бюджет зведено з профіцитом 3,4 % ВВП;</li>
+            <li>частка непрацюючих кредитів зменшилася з 11,1 % до 1,6 % — ризики банківської системи істотно знизилися.</li>
+          </ul>
+          <p><strong class="danger-text">Проблемні зони:</strong></p>
+          <ul>
+            <li>хронічний дефіцит поточного рахунку (−8,8 % ВВП при порозі −4 %) і залежність від зовнішнього капіталу;</li>
+            <li>борг приватного сектору (161,6 % ВВП) досі перевищує поріг 133 %, хоча стрімко скорочується;</li>
+            <li>інвестиції (20,0 % ВВП) стабільно нижчі за поріг 25 % і навіть дещо зменшилися порівняно з 2020 р.;</li>
+            <li>критична енергетична залежність (87,7 % проти 57,3 % у середньому в ЄС) та ізольованість енергосистеми.</li>
+          </ul>
+          <p>Отже, <strong>макрофінансова складова</strong> економічної безпеки Кіпру перебуває в безпечній зоні,
+            тоді як <strong>зовнішньоекономічна, інвестиційна та енергетична складові</strong> залишаються джерелами
+            загроз. Пріоритетними напрямами зміцнення економічної безпеки є: диверсифікація економіки та
+            експорту, стимулювання інвестицій у виробничий капітал, розвиток відновлюваної енергетики й
+            міждержавних енергетичних з'єднань (зокрема проєкту Great Sea Interconnector), посилення
+            санкційного та AML-комплаєнсу фінансового сектору, а також адаптація до кліматичних ризиків
+            і дефіциту води.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 9. Джерела -->
+    <section class="section section-alt" id="sources-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">9 · Джерела</span>
+          <h2>Перелік джерел</h2>
+          <p>Джерела даних і порогових значень, використаних в аналізі.</p>
+        </div>
+        <ol class="sources" id="sources"></ol>
+        <div class="grid grid-3 mt-24">
+          <div class="card"><h3>Маастрихтські критерії</h3><p class="text-muted mt-0">Державний борг ≤ 60 % ВВП, дефіцит бюджету ≤ 3 % ВВП, інфляція ≈ 3 %.</p></div>
+          <div class="card"><h3>MIP Scoreboard ЄС та EBA</h3><p class="text-muted mt-0">Сальдо поточного рахунку ≥ −4 % ВВП, приватний борг ≤ 133 % ВВП; NPL ≤ 5 %.</p></div>
+          <div class="card"><h3>Методика Мінекономіки України</h3><p class="text-muted mt-0">Безробіття ≤ 7 %, інвестиції ≥ 25 % ВВП, зростання ВВП ≥ 2 %, енергозалежність ≤ 60 %.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2026 · Автор: <strong>Канавець К. О.</strong></div>
+      <nav class="footer-links" aria-label="Посилання в підвалі">
+        <a href="index.html">Про автора</a>
+        <a href="analysis.html">Аналіз</a>
+        <a href="../index.html">← Усі проєкти</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Повернутися вгору">↑</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/analysis.js"></script>
+</body>
+</html>
