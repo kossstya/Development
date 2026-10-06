@@ -42,3 +42,4 @@ Development/
 - Портфоліо: https://github.com/kossstya/Portfolio
 
 © 2026 Канавець Костянтин Олегович
+
