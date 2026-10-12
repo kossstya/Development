@@ -1,0 +1,139 @@
+/* =========================================================
+   Платформа «Демографічне навантаження» (індикатор 2.6)
+   Доповнення до спільного style.css
+   Автор: Канавець Костянтин Олегович, 2026
+   ========================================================= */
+
+:root {
+  --lvl-opt: #16955a;      --lvl-opt-bg: #e3f5ec;
+  --lvl-sat: #6a9e1f;      --lvl-sat-bg: #eef6e0;
+  --lvl-unsat: #c98a0c;    --lvl-unsat-bg: #fdf3dc;
+  --lvl-dang: #d8661c;     --lvl-dang-bg: #fde9db;
+  --lvl-crit: #d23f3f;     --lvl-crit-bg: #fbe6e6;
+  --lvl-abs: #8e1b2c;      --lvl-abs-bg: #f3dde1;
+}
+
+.hidden { display: none !important; }
+.mt-24 { margin-top: 24px; }
+.hero .hero-meta a { color: #f0b26b; text-decoration: underline; }
+.hero .btn-row { margin-top: 26px; }
+
+/* ---------- Формула ---------- */
+.formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 22px 16px;
+  margin: 6px 0 18px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1px solid #f1d3b0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+.f-frac { display: inline-flex; flex-direction: column; align-items: center; }
+.f-num { padding: 0 8px 6px; border-bottom: 2px solid var(--navy-900); }
+.f-den { padding: 6px 8px 0; }
+.note { color: var(--muted); font-size: .9rem; margin: 14px 0 0; }
+
+/* ---------- Шкала рівнів ---------- */
+.thresholds {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.threshold {
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+}
+.threshold .interval { font-weight: 800; font-size: 1.02rem; }
+.threshold .level { font-size: .88rem; }
+
+.lvl-opt   { background: var(--lvl-opt-bg);   color: var(--lvl-opt);   border-color: var(--lvl-opt); }
+.lvl-sat   { background: var(--lvl-sat-bg);   color: var(--lvl-sat);   border-color: var(--lvl-sat); }
+.lvl-unsat { background: var(--lvl-unsat-bg); color: var(--lvl-unsat); border-color: var(--lvl-unsat); }
+.lvl-dang  { background: var(--lvl-dang-bg);  color: var(--lvl-dang);  border-color: var(--lvl-dang); }
+.lvl-crit  { background: var(--lvl-crit-bg);  color: var(--lvl-crit);  border-color: var(--lvl-crit); }
+.lvl-abs   { background: var(--lvl-abs-bg);   color: var(--lvl-abs);   border-color: var(--lvl-abs); }
+.badge.lvl-opt, .badge.lvl-sat, .badge.lvl-unsat, .badge.lvl-dang, .badge.lvl-crit, .badge.lvl-abs { border: 1px solid; }
+
+.thr-table { min-width: 620px; }
+.thr-table td { font-weight: 700; font-size: 1.05rem; }
+.thr-table td:nth-child(5), .thr-table td:nth-child(6) { background: var(--lvl-opt-bg); color: var(--lvl-opt); }
+
+/* ---------- Форма ---------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-weight: 650; font-size: .92rem; color: var(--navy-900); }
+.field input,
+.field select,
+.input-table input {
+  font: inherit;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cdd5e1;
+  background: #fff;
+  color: var(--text);
+  transition: border-color .15s, box-shadow .15s;
+}
+.field input:focus,
+.field select:focus,
+.input-table input:focus {
+  outline: none;
+  border-color: var(--navy-700);
+  box-shadow: 0 0 0 3px rgba(24, 58, 102, .15);
+}
+.input-table input { text-align: right; min-width: 150px; }
+input.is-invalid { border-color: var(--danger) !important; background: #fff7f7 !important; }
+input.is-warning { border-color: var(--warn) !important; background: #fffbf0 !important; }
+.field-error { color: var(--danger); font-size: .8rem; min-height: 1em; white-space: normal; text-align: left; display: block; }
+.field-error.warn { color: var(--warn); }
+.input-table td { vertical-align: top; }
+.input-table td:first-child { font-weight: 800; padding-top: 20px; }
+.helper { color: var(--muted); font-size: .88rem; }
+
+.message { display: none; margin-top: 16px; padding: 12px 16px; border-radius: 10px; font-size: .94rem; }
+.message.error { display: block; background: var(--danger-bg); color: #9c2525; border: 1px solid #f0b8b8; }
+.message.warn { display: block; background: var(--warn-bg); color: #7d5506; border: 1px solid #edd291; }
+.message.info { display: block; background: #e7effa; color: var(--navy-700); border: 1px solid #c6d6ee; }
+.message ul { margin: 6px 0 0; padding-left: 1.2em; }
+
+.btn-sm { padding: 8px 14px; font-size: .88rem; }
+
+/* ---------- Результати ---------- */
+.summary-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.summary-item .num { font-size: 1.6rem; }
+.summary-item .num.small { font-size: 1.15rem; padding-top: 6px; }
+.result-table { min-width: 820px; }
+.result-table thead th { white-space: normal; font-size: .86rem; line-height: 1.3; }
+.result-table td, .result-table th { padding-left: 10px; padding-right: 10px; }
+.result-table td.dn { font-weight: 800; }
+.conclusion p { line-height: 1.7; }
+
+@media (max-width: 860px) {
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .summary-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .formula { font-size: 1.1rem; }
+  .summary-strip { grid-template-columns: 1fr; }
+}
+
+@media print {
+  .no-print, #input, #method, .site-footer { display: none !important; }
+  .hero .btn-row { display: none; }
+  .section { padding: 16px 0; }
+  .card, .summary-item, .table-wrap { box-shadow: none; }
+  .chart-box { height: 300px; }
+}
