@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аналіз: Республіка Корея | Економічна безпека країни</title>
+  <meta name="description" content="Аналіз економічної безпеки Республіки Корея за показниками Світового банку: порогові значення, тенденції, загрози, висновки.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand-flag"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 0 1 16 0z" fill="#cd2e3a"/><path d="M0 8a8 8 0 0 0 16 0z" fill="#0047a0"/></svg></span>
+        Економічна безпека країни
+      </a>
+      <button class="nav-toggle" aria-label="Меню">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Про автора</a></li>
+        <li><a href="analysis.html" class="active">Аналіз: Республіка Корея</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1 style="margin-top:0">Економічна безпека Республіки Корея</h1>
+      <p>Аналіз виконано за 7 показниками (9 значень з урахуванням поділу за статтю) на основі відкритих даних <a href="https://data.worldbank.org/country/korea-republic" target="_blank" rel="noopener">Світового банку</a>. Період — 2015–2024 рр. або останні доступні роки. Кожне значення порівняно з пороговими інтервалами та віднесено до одного з рівнів економічної безпеки:</p>
+      <p>
+        <span class="badge lvl-opt">Оптимальний</span>
+        <span class="badge lvl-sat">Задовільний</span>
+        <span class="badge lvl-uns">Незадовільний</span>
+        <span class="badge lvl-dang">Небезпечний</span>
+        <span class="badge lvl-crit">Критичний</span>
+        <span class="badge lvl-abs">Абсолютна небезпека</span>
+      </p>
+      <nav class="subnav" aria-label="Розділи сторінки">
+        <a href="#key">Ключові показники</a>
+        <a href="#summary-sec">Порівняння з порогами</a>
+        <a href="#indicators">Детальний аналіз</a>
+        <a href="#trends">Тенденції</a>
+        <a href="#threats">Загрози</a>
+        <a href="#conclusion">Висновок</a>
+        <a href="#sources">Джерела</a>
+      </nav>
+    </section>
+
+    <section id="key">
+      <h2>Ключові показники (останній доступний рік)</h2>
+      <div class="kpis" id="kpis"></div>
+    </section>
+
+    <section id="summary-sec">
+      <h2>Порівняння фактичних показників із пороговими значеннями</h2>
+      <div class="table-wrap">
+        <table id="summary">
+          <thead><tr><th>Показник</th><th>Оптимальний інтервал</th><th>Початок періоду</th><th>Останнє значення</th><th>Зміна</th><th>Рівень безпеки</th><th>Тенденція</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="grid-2" style="margin-top:20px">
+        <div class="card"><h3>Профіль економічної безпеки</h3><div class="chart-box" style="height:340px"><canvas id="radar"></canvas></div></div>
+        <div class="card">
+          <h3>Інтегральна оцінка</h3>
+          <p>Кожному рівню присвоєно бал: оптимальний — 5, задовільний — 4, незадовільний — 3, небезпечний — 2, критичний — 1, абсолютна небезпека — 0. Середній бал за <span id="integral-n"></span> значеннями (останній доступний рік):</p>
+          <p class="integral"><span id="integral"></span> / 5</p>
+          <p>Середній бал 4,0 відповідає рівню <span class="badge lvl-sat">Задовільний</span>. У 6 з 9 значень рівень оптимальний, в 1 — задовільний. Водночас 2 показники (держборг і нерівність доходів) перебувають у небезпечній зоні та знижують загальну оцінку.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Детальний аналіз показників</h2>
+      <div id="indicators"></div>
+    </section>
+
+    <section id="trends">
+      <h2>Безпечні та небезпечні тенденції</h2>
+      <div class="grid-2">
+        <div class="card" style="border-top:5px solid var(--opt)">
+          <h3>✅ Безпечні тенденції</h3>
+          <ul>
+            <li>Стабільне зростання витрат на R&amp;D: 3,79 → 4,94 % ВВП, це один з найвищих рівнів у світі.</li>
+            <li>Зростання очікуваної тривалості життя: жінки 86,6, чоловіки 80,8 року.</li>
+            <li>Постійне зниження смертності немовлят (2,1–2,5 ‰).</li>
+            <li>Скорочення розриву в доходах: 11,0 (2016) → 8,62 раза (2021).</li>
+            <li>Стійко позитивне сальдо зовнішньої торгівлі (К ≥ 1 весь період).</li>
+            <li>Стабільна урожайність зернових на рівні 62–68 ц/га.</li>
+          </ul>
+        </div>
+        <div class="card" style="border-top:5px solid var(--crit)">
+          <h3>⚠️ Небезпечні тенденції</h3>
+          <ul>
+            <li>Швидке зростання держборгу: 35,7 % (2015) → 47,8 % ВВП (2024), з 2020 р. у зоні «Небезпечний», близько до критичного порогу 50 %.</li>
+            <li>Нерівність доходів весь період у зоні «Абсолютна небезпека» (&gt; 7 разів).</li>
+            <li>Зниження коефіцієнта покриття імпорту до 1,00 у 2022 р., тобто до нижньої межі оптимуму.</li>
+            <li>Слабке зниження урожайності після 2021 р. (68,25 → 65,44 ц/га).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="threats">
+      <h2>Основні загрози економічній безпеці</h2>
+      <div class="grid-3">
+        <div class="card threat"><h3>1. Боргове навантаження</h3><p>Борг центрального уряду наближається до 50 % ВВП. Старіння населення збільшує соціальні видатки, тому бюджетний простір для реагування на майбутні кризи звужується.</p></div>
+        <div class="card threat"><h3>2. Соціальна нерівність</h3><p>Найбагатші 10 % отримують у 8–9 разів більше доходу, ніж найбідніші 10 %. Це загрожує соціальній стабільності, знижує внутрішній споживчий попит і підсилює демографічні проблеми.</p></div>
+        <div class="card threat medium"><h3>3. Залежність від зовнішніх ринків</h3><p>Експорт становить ≈ 44 % ВВП, а імпорт ≈ 40 %. Економіка вразлива до коливань світового попиту (напівпровідники, автомобілі), до цін на енергоносії та до торговельних конфліктів.</p></div>
+        <div class="card threat medium"><h3>4. Демографічна криза</h3><p>Попри високу тривалість життя й низьку смертність немовлят, народжуваність у Кореї одна з найнижчих у світі. Населення швидко старіє, що тисне на ринок праці та пенсійну систему.</p></div>
+        <div class="card threat low"><h3>5. Продовольча залежність</h3><p>Урожайність висока, але площа ріллі обмежена, тому значна частина зерна (кукурудза, пшениця) імпортується. Країна чутлива до світових цін на продовольство.</p></div>
+        <div class="card threat low"><h3>6. Технологічна конкуренція</h3><p>Технологічне лідерство залежить від глобальних ланцюгів постачання напівпровідників та від посилення конкуренції з боку Китаю й інших країн.</p></div>
+      </div>
+    </section>
+
+    <section id="conclusion" class="card conclusion">
+      <h2 style="border-color:#fff">Узагальнений аналітичний висновок</h2>
+      <p>Загалом економічна безпека Республіки Корея перебуває на <strong>задовільному рівні</strong>: інтегральний бал становить 4,0 з 5. Найсильніші сторони країни — людський капітал та інновації. Тривалість життя, смертність немовлят і витрати на дослідження та розробки (4,94 % ВВП) перебувають на оптимальному рівні та мають стабільно позитивну динаміку. Зовнішньоторговельна позиція також збалансована: експорт покриває імпорт (К = 1,10 у 2024 р.), а урожайність зернових стабільно задовільна.</p>
+      <p>Головні загрози пов'язані з <strong>фінансовою та соціальною сферами</strong>. Борг центрального уряду з 2020 р. перебуває на небезпечному рівні (47,8 % ВВП) і близький до критичного порогу. Нерівність доходів (8,62 раза) відповідає рівню абсолютної небезпеки, хоча й має тенденцію до зменшення.</p>
+      <p>Рекомендовані напрями: бюджетна консолідація та стабілізація боргу нижче 45 % ВВП; посилення соціальної політики та підтримки домогосподарств з низькими доходами; диверсифікація експортних ринків і джерел енергії; збереження високих інвестицій у науку та технології.</p>
+    </section>
+
+    <section id="sources" class="card" style="margin-top:36px">
+      <h2>Джерела даних</h2>
+      <ul class="small">
+        <li>World Bank Open Data — Cereal yield (kg per hectare): <a href="https://data.worldbank.org/indicator/AG.YLD.CREL.KG" target="_blank" rel="noopener">AG.YLD.CREL.KG</a></li>
+        <li>Life expectancy at birth, female / male: <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.FE.IN" target="_blank" rel="noopener">SP.DYN.LE00.FE.IN</a>, <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.MA.IN" target="_blank" rel="noopener">SP.DYN.LE00.MA.IN</a></li>
+        <li>Mortality rate, infant, female / male: <a href="https://data.worldbank.org/indicator/SP.DYN.IMRT.FE.IN" target="_blank" rel="noopener">SP.DYN.IMRT.FE.IN</a>, <a href="https://data.worldbank.org/indicator/SP.DYN.IMRT.MA.IN" target="_blank" rel="noopener">SP.DYN.IMRT.MA.IN</a></li>
+        <li>Exports / Imports of goods and services (% of GDP): <a href="https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS" target="_blank" rel="noopener">NE.EXP.GNFS.ZS</a>, <a href="https://data.worldbank.org/indicator/NE.IMP.GNFS.ZS" target="_blank" rel="noopener">NE.IMP.GNFS.ZS</a></li>
+        <li>Research and development expenditure (% of GDP): <a href="https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS" target="_blank" rel="noopener">GB.XPD.RSDV.GD.ZS</a></li>
+        <li>Income share held by highest / lowest 10%: <a href="https://data.worldbank.org/indicator/SI.DST.10TH.10" target="_blank" rel="noopener">SI.DST.10TH.10</a>, <a href="https://data.worldbank.org/indicator/SI.DST.FRST.10" target="_blank" rel="noopener">SI.DST.FRST.10</a></li>
+        <li>Central government debt, total (% of GDP): <a href="https://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS" target="_blank" rel="noopener">GC.DOD.TOTL.GD.ZS</a></li>
+      </ul>
+      <p class="muted small">Дані завантажено через World Bank API 02.11.2026.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 Канавець Костянтин Олегович. Вебсайт «Економічна безпека країни».
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
